@@ -1,0 +1,60 @@
+<section>
+  <div class="row">
+    <div class="col m3">
+      <mat-card>
+        <app-queue-min></app-queue-min>
+      </mat-card>
+    </div>
+    <div class="col m9">
+      <div class="row">
+        <div class="col m6">
+          <mat-card>
+            <p>Patient</p>
+            <h6>{{($patient)?.first_name}} {{($patient)?.father_name}}</h6>
+            <p class="secondery"><b>ID {{($patient)?.reg_id}}</b></p>
+          </mat-card>
+        </div>
+        <div class="col m6">
+          <mat-card>
+            <div class="row">
+              <div class="col m8">
+                <p style="margin-top: 0px">Physician</p>
+                <h6>{{($physician)?.first_name}} {{($physician)?.father_name}}</h6>
+                <p class="secondery" style="margin-bottom: 0px"><b>Room number {{($physician)?.room_number}}</b></p>
+              </div>
+              <div class="col m4">
+                <img [src]="$profile_pic" id="profile-pic"> 
+              </div>
+            </div>
+            
+           
+          </mat-card>
+        </div>
+      </div>
+      
+      <mat-card>
+        <div class="row">
+          <app-lab-requests-table 
+          [requests]="$requests" 
+          (rowClick)="respondDialog($event)"
+          (update)="$requests = $event"></app-lab-requests-table>
+        </div>
+        <div class="row" >
+          <button mat-flat-button 
+          *ngIf="$requests.length > 0"
+          (click)="submit()" 
+          class="right"
+          style="margin-right: 6em">Send <mat-icon>send</mat-icon></button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</section>
+<app-saved-states
+[activeQueueId]="($queue)?.id"
+[next]="update.onFinish"
+[update]="update.savedStates"
+></app-saved-states>
+<app-floating-action-btn
+(action) = "floatingActionButton($event)"
+></app-floating-action-btn>

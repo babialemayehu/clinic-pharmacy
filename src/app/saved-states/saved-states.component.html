@@ -1,0 +1,15 @@
+<div id='saved-stats-bar'>
+  <div 
+  *ngFor="let queue of savedQueues"
+  [style.width]="width" 
+  id="tab" 
+  [class.active]="queue.id == active"
+  (click)="$open(queue)"
+  [routerLink]="'/lab/requests/'+queue.id">
+    <ul>
+      <li>.</li>
+      <li>{{queue.patient.reg_id}}</li>
+      <li>.</li>
+    </ul>
+  </div> 
+</div>

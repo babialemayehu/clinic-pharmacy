@@ -1,0 +1,34 @@
+<section>
+  <div class="row">
+    <div class="col m3">
+      <mat-card>
+        <app-queue-min></app-queue-min>
+      </mat-card>
+    </div>
+    <div class="col m9" style="margin-top: 5%">
+      <section>
+        <div class="row">
+          <mat-card style="width: 60%; margin: auto">
+            <div class="progress" [class.hide]="!loading" >
+              <div class="indeterminate"></div>
+            </div>
+            <div [class.form-loading]="loading">
+              <h3 class="center">Wellcome</h3>
+              <h6 class="center">Do you want to start treatement?</h6>
+              <br>
+              <div style="width: 80%; margin: auto;">
+                <app-room-number 
+                (status)="onStatus($event)" 
+                [roomNumber]="($auth)?.room_number"
+                ></app-room-number>           
+              </div>
+              <div style="width: 100%; text-align: center;">
+                <button mat-flat-button color="primary" (click)="next()">Start</button>
+              </div>
+            </div> 
+          </mat-card>
+        </div>
+      </section> 
+    </div>
+  </div>
+</section>

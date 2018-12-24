@@ -1,0 +1,51 @@
+<section>
+  <div class="row">
+    <div class="col m3">
+      <mat-card>
+        <app-queue-min></app-queue-min>
+      </mat-card>
+    </div>
+    <div class="col m9">
+      <div class="row">
+        <section *ngIf="empty">
+            <mat-card style="margin: 15%;">
+              <div class="container">
+                <div class="row">
+                    <div class="center" style="width: 100%; opacity: 0.8">
+                      <h6><strong class="secondery center">
+                        <B>There is no patient in the queue. <br>You will be notified when new patient arrived</B>
+                      </strong></h6>
+                      
+                    </div>
+                </div>
+              </div>
+            </mat-card>
+          </section>
+          <!-- NEW REQUEST FOUND  -->
+          <section *ngIf="!empty">
+            <mat-card style="margin: 15%;">
+              <div class="container">
+                <div class="row">
+                  <div class="center" style="width: 100%; opacity: 0.8">
+                    <h6><strong class="secondery center">
+                      <B>New patient arrived</B>
+                    </strong></h6>
+                  </div>
+                </div>
+                <div class=" center">
+                  <button mat-flat-button (click)="next()">Accept</button> 
+                </div>
+              </div>
+            </mat-card>
+          </section>
+      </div>
+    </div>
+  </div>
+</section>
+<app-saved-states
+[activeQueueId]="($queue)?.id"
+></app-saved-states>
+<app-floating-action-btn
+(action) = "floatingActionButton($event)"
+></app-floating-action-btn>
+
