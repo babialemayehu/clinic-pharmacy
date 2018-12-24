@@ -5,7 +5,7 @@
   id="tab" 
   [class.active]="queue.id == active"
   (click)="$open(queue)"
-  [routerLink]="'/lab/requests/'+queue.id">
+  [routerLink]="'/prescription/'+queue.id">
     <ul>
       <li>.</li>
       <li>{{queue.patient.reg_id}}</li>

@@ -15,6 +15,7 @@ export interface Prescription{
     frequency: Drug_frequency, 
     dose: number,
     name: string, 
+    isDeliverd: boolean, 
     created_at: string, 
     deleted_at: string, 
     updated_at: string

@@ -1,0 +1,19 @@
+<div classs="contatiner">
+  <div class="row">
+    <div class="col m8 offset-m2">
+      <h5>Orders</h5>
+      <mat-list>
+        <mat-list-item *ngFor="let $order of $orders" style="margin: 16px 0px">
+          <a [routerLink]="['/ordered drugs/'+$order.id]" style="width: 100%;"> 
+              <mat-card id="order"  style="padding: 16px 36px; ">
+                <span>{{$orders.indexOf($order)+1}}. </span>
+                <span>{{$order.drugs}}</span>
+                <span class="secondery right">{{$order.created_at}}</span>
+              </mat-card>
+            </a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    
+  </div>
+</div>

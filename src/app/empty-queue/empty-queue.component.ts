@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LaboratoryQueueService } from '../service/laboratory-queue.service';
 import { Router } from '@angular/router';
+import { PharmacyQueueService } from '../service/pharmacy-queue.service';
 
 @Component({
   selector: 'app-empty-queue',
@@ -13,13 +14,13 @@ export class EmptyQueueComponent implements OnInit {
   private queueChecker; 
 
   constructor(
-    private _labQueue: LaboratoryQueueService, 
+    private _pharmacyQueue: PharmacyQueueService, 
     private _router: Router
   ) { }
 
   ngOnInit() {
     this.queueChecker = setInterval(()=>{
-      this._labQueue.isEmpty().subscribe(
+      this._pharmacyQueue.isEmpty().subscribe(
         (isEmpty) => {
           this.empty = isEmpty; 
         }
@@ -28,13 +29,13 @@ export class EmptyQueueComponent implements OnInit {
   }
 
   next(){
-    this._labQueue.next().subscribe(
+    this._pharmacyQueue.next().subscribe(
       (responce) => {
-        this._router.navigate(['lab/requests/'+responce.id]);
+        this._router.navigate(['/prescription/'+responce.id]);
       },
       (error) => {
         if(error.status == 406){
-          this._router.navigate(['/lab/request/empty']); 
+          this._router.navigate(['/prescription/empty']); 
         }
       }
     ); 

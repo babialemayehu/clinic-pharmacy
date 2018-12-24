@@ -24,6 +24,7 @@ button:focus{ background: darken($color: #ddd, $amount: 0.1)}
 .accent{ background-color: mat-color($accent); i  { color: black } }
 .accent:hover{background-color: mat-color($accent, A400); }
 .danger-text{ color: mat-color($warn, 500)}
+.selected-row { background-color: darken($color: #eeeeee, $amount: 2) }
 //  Text topography
 .secondery{ color: lighten(#555, .5)}
 .small { font-size: .8em !important }
@@ -32,6 +33,13 @@ button:focus{ background: darken($color: #ddd, $amount: 0.1)}
 // capitalaization
 .uppercase{ text-transform: uppercase }
 .capitalize{ text-transform: capitalize }
+
+// floating action button 
+.FAB{
+    position: fixed !important; 
+    right: 36px; 
+    bottom: 36px; 
+}
 
 .character-counter{display:none}
 .mat-card.form-container{

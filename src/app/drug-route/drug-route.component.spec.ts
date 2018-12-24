@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LabRequestsTableComponent } from './lab-requests-table.component';
+import { DrugRouteComponent } from './drug-route.component';
 
-describe('LabRequestsTableComponent', () => {
-  let component: LabRequestsTableComponent;
-  let fixture: ComponentFixture<LabRequestsTableComponent>;
+describe('DrugRouteComponent', () => {
+  let component: DrugRouteComponent;
+  let fixture: ComponentFixture<DrugRouteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LabRequestsTableComponent ]
+      declarations: [ DrugRouteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LabRequestsTableComponent);
+    fixture = TestBed.createComponent(DrugRouteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

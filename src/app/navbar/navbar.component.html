@@ -3,12 +3,16 @@
       <div class="nav-wrapper">
           <a href="#" class="brand-logo">DMU Clinic</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li *ngFor="let item of menuItems"><a [href]="item.href">{{item.text}}</a></li>
+            <li *ngFor="let item of menuItems"><a [routerLink]="item.href">{{item.text}}</a></li>
           </ul>
       </div>
   </div>
   <div>
-    <span href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></span>
+    <span href="#" data-target="slide-out" class="sidenav-trigger">
+      <button mat-icon-button>
+        <mat-card>manu</mat-card>
+      </button>
+    </span>
   </div>
   <div class="container ">
     <span class='right hide-on-large-only '>

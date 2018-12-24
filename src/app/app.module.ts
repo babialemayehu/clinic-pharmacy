@@ -70,12 +70,16 @@ import { VisitsComponent } from './visits/visits.component';
 import { SetupDialogComponent } from './setup-dialog/setup-dialog.component';
 import { UploadComponent } from './upload_profile_pic/upload/upload.component';
 import { RouteComponent } from './upload_profile_pic/route/route.component';
-import { LabResquestsComponent } from './lab-resquests/lab-resquests.component';
-import { LabResultComponent } from './lab-result/lab-result.component';
-import { LabRequestsTableComponent } from './lab-requests-table/lab-requests-table.component';
-import { LabResponceDialogComponent } from './lab-responce-dialog/lab-responce-dialog.component'; 
 import { SavedStatesComponent } from './saved-states/saved-states.component';
 import { EmptyQueueComponent } from './empty-queue/empty-queue.component';
+import { PharmacyRequestsTableComponent } from './pharmacy-requests-table/pharmacy-requests-table.component';
+import { PrescriptionTableComponent } from './prescription-table/prescription-table.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { DrugRouteComponent } from './drug-route/drug-route.component';
+import { OrderComponent } from './order/order.component';
+import { OrdersTableComponent } from './orders-table/orders-table.component';
+import { OrdersListComponent } from './orders-list/orders-list.component';
+import { OrderedDrugsComponent } from './ordered-drugs/ordered-drugs.component';
 
 @NgModule({
   declarations: [
@@ -107,12 +111,16 @@ import { EmptyQueueComponent } from './empty-queue/empty-queue.component';
     UploadComponent,
     RouteComponent,
     RoomNumberComponent,
-    LabResquestsComponent,
-    LabResultComponent, 
-    LabRequestsTableComponent, 
-    LabResponceDialogComponent,
     SavedStatesComponent,
     EmptyQueueComponent,
+    PharmacyRequestsTableComponent,
+    PrescriptionTableComponent,
+    PrescriptionComponent,
+    DrugRouteComponent,
+    OrderComponent,
+    OrdersTableComponent,
+    OrdersListComponent,
+    OrderedDrugsComponent,
     // ContextMenu,
   ],
   imports: [
@@ -149,7 +157,6 @@ import { EmptyQueueComponent } from './empty-queue/empty-queue.component';
     ContextMenuComponent,
     UserProfileModalComponent,
     SetupDialogComponent, 
-    LabResponceDialogComponent
   ], 
   providers: [
     UserService, 

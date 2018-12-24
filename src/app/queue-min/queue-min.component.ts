@@ -3,6 +3,7 @@ import { Patient_queue } from '../model/Patient_queue';
 import { LaboratoryQueueService } from '../service/laboratory-queue.service'; 
 import { Options } from '../model/Options';
 import { Router } from '@angular/router'; 
+import { PharmacyQueueService } from '../service/pharmacy-queue.service'; 
 
 @Component({
   selector: 'app-queue-min',
@@ -23,7 +24,7 @@ export class QueueMinComponent implements OnInit {
   set loadTriggr(value){
     this.load(); 
   }
-  constructor(private _queue: LaboratoryQueueService, private _router: Router) { }
+  constructor(private _queue: PharmacyQueueService, private _router: Router) { }
 
   ngOnInit() {
     this.load(); 
@@ -36,7 +37,7 @@ export class QueueMinComponent implements OnInit {
   
   load(){
     this._queue.queue_list(7).subscribe(
-      (responce) => {
+      responce => {
         this.queues = responce; 
       }
     )

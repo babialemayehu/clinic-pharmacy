@@ -14,7 +14,7 @@ declare var M;
 export class AppComponent {
   title = 'admin2';
   private $auth: User; 
-  private profilePic: string; 
+  private profilePic: string = 'assets/avatar.jpg'; 
 
   constructor(public _dialog: MatDialog, public _user: UserService) { }
 

@@ -33,11 +33,13 @@
       </div>
       
       <mat-card>
-        <div class="row">
-          <app-lab-requests-table 
+        <div class="progress" [class.hide]="!loading" >
+          <div class="indeterminate"></div>
+        </div>
+        <div class="row" [class.form-loading]="loading">
+          <app-prescription-table 
           [requests]="$requests" 
-          (rowClick)="respondDialog($event)"
-          (update)="$requests = $event"></app-lab-requests-table>
+          (update)="$requests = $event"></app-prescription-table>
         </div>
         <div class="row" >
           <button mat-flat-button 

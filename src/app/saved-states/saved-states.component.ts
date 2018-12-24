@@ -3,6 +3,7 @@ import { PatientQueueService } from '../service/patient-queue.service';
 import { Patient_queue } from '../model/Patient_queue';
 import { LaboratoryQueueService } from '../service/laboratory-queue.service';
 import { Router } from '@angular/router';
+import { PharmacyQueueService } from '../service/pharmacy-queue.service';
 
 enum Operation{
     NEXT, THIS, PREVIOUS, CHOOSE_SIDE
@@ -29,7 +30,8 @@ export class SavedStatesComponent implements OnInit {
   
   
   private savedQueues: Patient_queue[] = []; 
-  constructor(private _queue: LaboratoryQueueService, private _router: Router ) { }
+  
+  constructor(private _queue: PharmacyQueueService, private _router: Router ) { }
 
   ngOnChanges(){
     if(typeof this.activeQueueId === 'undefined'){
@@ -79,6 +81,6 @@ export class SavedStatesComponent implements OnInit {
   }
 
   $open(queue: Patient_queue){
-    this._router.navigate(['lab/requests/'+queue.id]);
+    this._router.navigate(['/prescription/'+queue.id]);
   }
 }
